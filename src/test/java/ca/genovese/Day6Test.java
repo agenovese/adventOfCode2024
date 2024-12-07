@@ -18,7 +18,7 @@ public class Day6Test {
 
             long count = Day6.question1(lines);
 
-            assertThat(count).isEqualTo(0);
+            assertThat(count).isEqualTo(41);
 
 
         } catch (IOException e) {
@@ -31,7 +31,7 @@ public class Day6Test {
         try (Stream<String> lines = Files.lines(Paths.get("src/test/resources/Day6Input"))) {
             long count = Day6.question1(lines);
 
-            assertThat(count).isEqualTo(0);
+            assertThat(count).isEqualTo(4580);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -41,12 +41,8 @@ public class Day6Test {
     @Test
     void testSample2() {
         try (Stream<String> lines = Files.lines(Paths.get("src/test/resources/Day6Sample"))) {
-
             long count = Day6.question2(lines);
-
-            assertThat(count).isEqualTo(0);
-
-
+            assertThat(count).isEqualTo(6);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

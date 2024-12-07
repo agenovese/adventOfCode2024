@@ -8,14 +8,12 @@ import java.util.stream.Stream;
 public class Day2 {
     public static long getSafeReports(Stream<String> lineStream) {
         List<String> lines = lineStream.toList();
-        List<List<Integer>> reports = new ArrayList<>();
         List<Boolean> safe = new ArrayList<>();
-        List<Boolean> suppressed = new ArrayList<>();
 
 
         lines.forEach(line -> {
             String[] split = line.split("\s+");
-            ArrayList<Integer> report = new ArrayList<>(Arrays.asList(split).stream().map(Integer::parseInt).toList());
+            ArrayList<Integer> report = new ArrayList<>(Arrays.stream(split).map(Integer::parseInt).toList());
             boolean reportSafe = isReportSafe(report);
 
             for(int i = 0; i < report.size(); i++) {

@@ -24,7 +24,7 @@ public class Day5 {
         List<List<String>> list = inputLines.stream()
                 .filter(s -> s.contains(","))
                 .map(s -> s.split(","))
-                .map(s -> (List<String>) new ArrayList<String>(List.of(s)))
+                .map(s -> (List<String>) new ArrayList<>(List.of(s)))
                 .toList();
 
         return list.stream().filter(pj ->
@@ -45,7 +45,7 @@ public class Day5 {
         List<List<String>> list = inputLines.stream()
                 .filter(s -> s.contains(","))
                 .map(s -> s.split(","))
-                .map(s -> (List<String>) new ArrayList<String>(List.of(s)))
+                .map(s -> (List<String>) new ArrayList<>(List.of(s)))
                 .toList();
 
         return list.stream().filter(pj ->
