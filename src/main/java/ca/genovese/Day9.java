@@ -50,10 +50,8 @@ public class Day9 {
     }
 
     public static long question2(Stream<String> lineStream) {
-        List<Integer> inputValues = new ArrayList<>(Arrays.asList(lineStream.toList().getFirst().split(""))
-                .stream().map(Integer::parseInt).toList());
-
-
+        List<Integer> inputValues = new ArrayList<>(Arrays.stream(lineStream.toList().getFirst().split(""))
+                .map(Integer::parseInt).toList());
 
         List<File> original = new ArrayList<>();
         List<File> defraged = new ArrayList<>();

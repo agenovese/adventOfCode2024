@@ -22,10 +22,9 @@ public class Day7 {
                 return Set.of(head);
             } else {
                 Set<Long> subTotals = possibleTotals(localValues);
-                Set<Long> totals = subTotals.stream()
+                return subTotals.stream()
                         .flatMap(i -> Stream.of(i + head, i * head, Long.parseLong(i.toString() + head)))
                         .collect(Collectors.toSet());
-                return totals;
             }
         }
     }
@@ -44,10 +43,5 @@ public class Day7 {
                 .mapToLong(c -> c.result)
                 .sum();
     }
-
-    public static long question2(Stream<String> lineStream) {
-        return 0;
-    }
-
 
 }
