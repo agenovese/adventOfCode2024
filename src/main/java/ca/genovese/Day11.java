@@ -1,5 +1,8 @@
 package ca.genovese;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
@@ -56,9 +59,19 @@ public class Day11 {
                 .stream().map(Long::parseLong);
 
         long sum = inputValues.mapToLong(l -> applyRuleNTimesAndCache(l, 74)).sum();
-        System.out.println(resultCache.size());
+//        System.out.println(resultCache.size());
         return sum;
     }
 
+    public static void main(String[] args) {
+        try (Stream<String> lines = Files.lines(Paths.get("src/test/resources/Day11Input"))) {
+            long count = Day11.question2(lines);
+
+            System.out.println(count);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
